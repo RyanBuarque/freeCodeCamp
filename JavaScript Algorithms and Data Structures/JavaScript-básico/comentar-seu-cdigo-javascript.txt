@@ -1,0 +1,4 @@
+// primeiro tipo de comentário (uma linha )
+
+/* segundo tipo
+de comentário (múltiplas linhas) */

@@ -1,0 +1,10 @@
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+
+// Altere apenas o código abaixo desta linha
+let myStr = myNoun + " " + myVerb + " " + myAdjective + " " + myAdverb
+console.log(myStr)
+const wordBlanks = myStr; // Altere esta linha
+// Altere apenas o código acima desta linha

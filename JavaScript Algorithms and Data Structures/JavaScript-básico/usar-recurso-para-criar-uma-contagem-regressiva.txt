@@ -1,0 +1,12 @@
+// Altere apenas o código abaixo desta linha
+let arr = []
+
+function countdown(n) {
+  if (n <= 0) {
+    return arr;
+  } else {
+    arr.push(n)
+    return countdown(n - 1);
+  }
+}
+// Altere apenas o código acima desta linha

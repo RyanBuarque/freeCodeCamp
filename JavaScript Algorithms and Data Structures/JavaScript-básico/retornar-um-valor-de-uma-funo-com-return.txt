@@ -1,0 +1,6 @@
+function timesFive(num) {
+  let result = num * 5
+  console.log(result)
+  return result
+}
+

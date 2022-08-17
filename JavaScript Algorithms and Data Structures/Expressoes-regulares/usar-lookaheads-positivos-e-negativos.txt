@@ -1,0 +1,3 @@
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w*\d{2})(?=\w{6})/; // Altere esta linha
+let result = pwRegex.test(sampleWord);

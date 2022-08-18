@@ -1,0 +1,6 @@
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+// Altere apenas o código abaixo desta linha
+arr.splice(0, 1)
+arr.splice(3,)
+// Altere apenas o código acima desta linha
+console.log(arr);

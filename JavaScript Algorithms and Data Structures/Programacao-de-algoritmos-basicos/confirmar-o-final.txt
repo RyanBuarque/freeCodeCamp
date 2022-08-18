@@ -1,0 +1,7 @@
+  function confirmEnding(str, target) {
+    let myRegex = new RegExp(target + "$")
+     console.log(myRegex)
+     return myRegex.test(str)
+}
+
+confirmEnding("Bastian", "n");

@@ -1,0 +1,9 @@
+// Altere apenas o código abaixo desta linha
+function urlSlug(title) {
+let arr = title.trim().split(/\s+/)
+let result = arr.join("-").toLowerCase()
+console.log(result)
+return result
+}
+// Altere apenas o código acima desta linha
+urlSlug(" Winter Is  Coming");

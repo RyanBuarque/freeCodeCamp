@@ -1,0 +1,11 @@
+function add(x) {
+  // Altere apenas o código abaixo desta linha
+ return (y) => {
+    return (z) => {
+      return x + y + z
+    }
+  }
+  // Altere apenas o código acima desta linha
+}
+
+add(10)(20)(30);

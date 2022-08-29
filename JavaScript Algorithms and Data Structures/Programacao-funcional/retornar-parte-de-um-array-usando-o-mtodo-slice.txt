@@ -1,0 +1,11 @@
+function sliceArray(anim, beginSlice, endSlice) {
+  // Altere apenas o código abaixo desta linha
+let newArr = anim.slice(beginSlice, endSlice)
+console.log(newArr)
+return newArr
+
+  // Altere apenas o código acima desta linha
+}
+
+const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);

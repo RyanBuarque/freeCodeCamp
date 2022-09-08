@@ -1,0 +1,14 @@
+function truthCheck(collection, pre) {
+
+  let result = 0
+
+  for(let i = 0; i < collection.length; i++) {
+    if(collection[i].hasOwnProperty(pre) && Boolean(collection[i][pre])) {
+      result++
+    }
+  }
+
+  return result == collection.length
+}
+
+truthCheck([{ name: "Quincy", role: "Founder", isBot: false }, { name: "Naomi", role: "", isBot: false }, { name: "Camperbot", role: "Bot", isBot: true }], "isBot");

@@ -1,0 +1,9 @@
+function spinalCase(str) {
+  let arr = str.split(/(?=[A-Z])|\W|_/).join("-")
+  return arr.toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
+spinalCase("thisIsSpinalTap");
+spinalCase("The_Andy_Griffith_Show");
+spinalCase("Teletubbies say Eh-oh");

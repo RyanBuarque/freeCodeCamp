@@ -1,0 +1,16 @@
+function fearNotLetter(str) {
+
+  let alfabeto = "abcdefghijklmnopqrstuvwxyz";
+  let result
+  let end = str.slice(-1)
+
+  for(let i = alfabeto.indexOf(str[0]); i <= alfabeto.indexOf(end); i++) {
+    if(!str.includes(alfabeto[i])) {
+      return result = alfabeto[i]
+    }
+  }
+  
+  return result
+}
+
+console.log(fearNotLetter("abcdefghjklmno"));

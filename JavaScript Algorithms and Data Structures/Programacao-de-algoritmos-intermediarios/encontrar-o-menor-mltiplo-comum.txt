@@ -1,0 +1,25 @@
+function smallestCommons(arr) {
+
+  let result = 0
+  arr.sort((a, b) => { return a - b })
+  let divisors = arr[1] - arr[0] + 1
+  let limit = 1
+
+  for(let i = arr[0]; i <= arr[1]; i++) {
+    limit *= i
+  }
+
+  for(let x = arr[1]; x <= limit; x += arr[1]) {
+    let count = 0;
+    for(let j = arr[0]; j <= arr[1]; j++) {
+      if(x % j === 0) {
+        count += 1;
+      }
+    }
+    if(count === divisors) {
+      return result = x;
+    }
+  }
+}
+
+smallestCommons([1, 5]);

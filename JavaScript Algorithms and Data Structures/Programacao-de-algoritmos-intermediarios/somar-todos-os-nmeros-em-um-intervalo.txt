@@ -1,0 +1,12 @@
+function sumAll(arr) {
+  arr.sort((a, b) => {return a - b})
+  console.log(arr)
+  let soma = 0
+  for(let i = arr[0]; i <= arr[1]; i++){
+    soma += i
+  }
+  console.log(soma)
+  return soma;
+}
+
+sumAll([10, 5]);

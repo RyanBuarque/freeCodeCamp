@@ -1,0 +1,18 @@
+function sumFibs(num) {
+
+let result = 0
+let prev = 0
+let next = 1
+
+while(next <= num) {
+  if(next % 2 !== 0) {
+    result += next
+  }
+    next += prev
+    prev = next - prev
+}
+
+return result
+}
+
+sumFibs(4);

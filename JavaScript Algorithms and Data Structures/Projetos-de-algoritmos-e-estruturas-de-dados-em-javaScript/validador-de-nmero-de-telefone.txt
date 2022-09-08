@@ -1,0 +1,51 @@
+function telephoneCheck(str) {
+
+  if(str[0] == "-") {
+    return false
+  }
+
+  let found = str.match(/\d+-/g)
+
+  if (found != null) {
+    if (found.length > 2) {
+      return false
+    }
+
+    for (let i in found) {
+      if (found[i].length != 4) {
+        return false
+      }
+    }
+  }
+
+  str = str.replace(/[\s-]/g, "")
+
+  if ((str.length == 10 || str.length == 11) && !/\D/g.test(str)) {
+    if (str.length == 11 && str[0] != 1) {
+      return false
+    }
+    return true
+  }
+
+  if ((str.length == 12 || str.length == 13)) {
+    if (str.length == 13 && str[0] == 1) {
+      if (str[1] == "(" && str[5] == ")") {
+        if (str.replace(/\D/g, "").length == 11) {
+          return true
+        }
+      }
+    }
+    if (str.length == 12) {
+      if (str[0] == "(" && str[4] == ")") {
+        if (str.replace(/\D/g, "").length == 10) {
+          return true
+        }
+      }
+    }
+  }
+
+  return false;
+}
+
+telephoneCheck("-1 (757) 622-7382")
+

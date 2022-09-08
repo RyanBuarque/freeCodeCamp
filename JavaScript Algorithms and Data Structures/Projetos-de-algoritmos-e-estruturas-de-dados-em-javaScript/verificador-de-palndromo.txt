@@ -1,0 +1,15 @@
+function palindrome(str) {
+  let regex = /[^a-z0-9]/g
+  str = str.toLowerCase().replace(regex, "")
+  let strReverse = str.split("").reverse().join("")
+
+  console.log(str)
+
+  if(strReverse != str) {
+    return false
+  }
+
+  return true;
+}
+
+palindrome("_eye")

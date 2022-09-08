@@ -1,0 +1,25 @@
+function rot13(str) {
+
+  let alfabeto = "abcdefghijklmnopqrstuvwxyz";
+  alfabeto = alfabeto.toUpperCase()
+  let result = ""
+  let arr = str.split("")
+
+  for (let i = 0; i < arr.length; i++) {
+    if (alfabeto.indexOf(arr[i]) != -1) {
+      let rot13 = alfabeto.indexOf(arr[i]) + 13
+      if (rot13 >= 26) {
+        result += alfabeto[rot13 - 26]
+      } else {
+        result += alfabeto[rot13]
+      }
+    } else {
+      result += arr[i]
+    }
+  }
+
+  console.log(result)
+  return result;
+}
+
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");

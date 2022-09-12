@@ -1,0 +1,82 @@
+function checkCashRegister(price, cash, cid) {
+
+  let result = { status: "", change: [] }
+  let cidValue = 0
+  let changeValue = cash - price
+
+  cid.map((arr) => cidValue += arr[1])
+  cidValue = Math.round(cidValue * 100) / 100
+
+  const insufficient = () => {
+    result.status = "INSUFFICIENT_FUNDS"
+    result.change = []
+    return result
+  }
+  if (changeValue == cidValue) {
+    result.status = "CLOSED"
+    result.change = cid
+  }
+  else {
+    result.status = "OPEN"
+    cid.map((arr) => result.change.push([arr[0], 0]))
+
+    while (changeValue > 0) {
+      changeValue = Math.round(changeValue * 100) / 100
+
+      if (changeValue >= 100 && cid[8][1] > 0) {
+        changeValue -= 100
+        cid[8][1] -= 100
+        result.change[8][1] += 100
+      }
+      else if (changeValue >= 20 && cid[7][1] > 0) {
+        changeValue -= 20
+        cid[7][1] -= 20
+        result.change[7][1] += 20
+      }
+      else if (changeValue >= 10 && cid[6][1] > 0) {
+        changeValue -= 10
+        cid[6][1] -= 10
+        result.change[6][1] += 10
+      }
+      else if (changeValue >= 5 && cid[5][1] > 0) {
+        changeValue -= 5
+        cid[5][1] -= 5
+        result.change[5][1] += 5
+      }
+      else if (changeValue >= 1 && cid[4][1] > 0) {
+        changeValue -= 1
+        cid[4][1] -= 1
+        result.change[4][1] += 1
+      }
+      else if (changeValue >= 0.25 && cid[3][1] > 0) {
+        changeValue -= 0.25
+        cid[3][1] -= 0.25
+        result.change[3][1] += 0.25
+      }
+      else if (changeValue >= 0.1 && cid[2][1] > 0) {
+        changeValue -= 0.1
+        cid[2][1] -= 0.1
+        result.change[2][1] += 0.1
+      }
+      else if (changeValue >= 0.05 && cid[1][1] > 0) {
+        changeValue -= 0.05
+        cid[1][1] -= 0.05
+        result.change[1][1] += 0.05
+      }
+      else if (changeValue >= 0.01 && cid[0][1] > 0) {
+        changeValue -= 0.01
+        cid[0][1] -= 0.01
+        result.change[0][1] += 0.01
+      }
+      else {
+        return insufficient()
+      }
+    }
+
+    result.change = result.change.reverse().filter((arr) => arr[1] > 0)
+  }
+
+  return result
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
